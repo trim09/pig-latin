@@ -42,7 +42,7 @@ public class PigLatinImpl implements PigLatin {
             String word = matcher.group(1);
             String rest = matcher.group(2);
 
-            LOG.info("Processing word='{}' and '{}'", word, rest);
+            LOG.trace("Processing word='{}' and '{}'", word, rest);
             converted.append(pigLatinWordConverter.apply(word)).append(rest);
         }
         return converted.toString();
