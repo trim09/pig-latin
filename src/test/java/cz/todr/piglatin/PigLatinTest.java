@@ -1,6 +1,5 @@
 package cz.todr.piglatin;
 
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,9 +7,6 @@ import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Iterator;
-import java.util.Objects;
-import java.util.stream.Stream;
 
 import static org.junit.Assert.*;
 
@@ -58,12 +54,12 @@ public class PigLatinTest {
 
     private String input;
 
-    private String output;
+    private String expected;
 
 
-    public PigLatinTest(String input, String output) {
+    public PigLatinTest(String input, String expected) {
         this.input = input;
-        this.output = output;
+        this.expected = expected;
     }
 
     @BeforeClass
@@ -73,7 +69,7 @@ public class PigLatinTest {
 
     @Test
     public void test() {
-        assertEquals(output, pigLatin.convert(input));
+        assertEquals(expected, pigLatin.convert(input));
     }
 
 }

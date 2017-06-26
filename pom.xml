@@ -51,6 +51,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
                 <configuration>
                     <source>${javac.target}</source>
                     <target>${javac.target}</target>
@@ -58,9 +59,42 @@
             </plugin>
 
             <plugin>
-                <artifactId>maven-jar-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includeScope>compile</includeScope>
+                    <outputDirectory>
+                        ${project.build.directory}/lib
+                    </outputDirectory>
+                </configuration>
             </plugin>
- 
+
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <archive>
+                        <index>true</index>
+                        <manifest>
+                            <mainClass>cz.todr.piglatin.Main</mainClass>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 </project>
