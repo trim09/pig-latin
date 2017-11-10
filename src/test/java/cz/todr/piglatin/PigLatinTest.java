@@ -13,6 +13,13 @@ import static org.junit.Assert.*;
 @RunWith(Parameterized.class)
 public class PigLatinTest {
 
+    /* Object under test */
+    private static PigLatin pigLatin;
+
+    private String input;
+
+    private String expected;
+
     @Parameterized.Parameters(name="{index}: {0} -> {1}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
@@ -48,14 +55,6 @@ public class PigLatinTest {
                 { "hello apple", "ellohay appleway"},
         });
     }
-
-    /* Object under test */
-    private static PigLatin pigLatin;
-
-    private String input;
-
-    private String expected;
-
 
     public PigLatinTest(String input, String expected) {
         this.input = input;

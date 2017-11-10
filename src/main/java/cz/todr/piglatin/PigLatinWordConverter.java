@@ -1,13 +1,8 @@
 package cz.todr.piglatin;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.stream.IntStream;
 
-class PigLatinWordConwerter {
-
-    private static final Logger LOG = LoggerFactory.getLogger(PigLatinImpl.class);
+class PigLatinWordConverter {
 
     static final String PUNCTUATIONS = "'‘’"; /* various types of punctuations */
 

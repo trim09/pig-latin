@@ -7,7 +7,7 @@ import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static cz.todr.piglatin.PigLatinWordConwerter.PUNCTUATIONS;
+import static cz.todr.piglatin.PigLatinWordConverter.PUNCTUATIONS;
 
 public class PigLatinImpl implements PigLatin {
 
@@ -17,7 +17,7 @@ public class PigLatinImpl implements PigLatin {
     private static final Pattern PATTERN = Pattern.compile("([\\w"  + PUNCTUATIONS + "]+)" +
                                                            "([^\\w" + PUNCTUATIONS + "]*)");
 
-    private PigLatinWordConwerter wordConverter = new PigLatinWordConwerter();
+    private PigLatinWordConverter wordConverter = new PigLatinWordConverter();
 
     @Override
     public String convert(String orig) {
