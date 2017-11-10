@@ -7,15 +7,15 @@ import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static cz.todr.piglatin.PigLatinWordConwerter.PUNTUATIONS;
+import static cz.todr.piglatin.PigLatinWordConwerter.PUNCTUATIONS;
 
 public class PigLatinImpl implements PigLatin {
 
     private static final Logger LOG = LoggerFactory.getLogger(PigLatinImpl.class);
 
     /* It is used to split a paragraph into words (1st group) and characters between words (2nd group). */
-    private static final Pattern PATTERN = Pattern.compile("([\\w"  + PUNTUATIONS + "]+)" +
-                                                           "([^\\w" + PUNTUATIONS + "]*)");
+    private static final Pattern PATTERN = Pattern.compile("([\\w"  + PUNCTUATIONS + "]+)" +
+                                                           "([^\\w" + PUNCTUATIONS + "]*)");
 
     private PigLatinWordConwerter wordConverter = new PigLatinWordConwerter();
 

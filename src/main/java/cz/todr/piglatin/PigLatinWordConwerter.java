@@ -9,7 +9,7 @@ class PigLatinWordConwerter {
 
     private static final Logger LOG = LoggerFactory.getLogger(PigLatinImpl.class);
 
-    static final String PUNTUATIONS = "'‘’"; /* various types of punctuations */
+    static final String PUNCTUATIONS = "'‘’"; /* various types of punctuations */
 
     private static final String VOWELS = "aeiou"; /* and 'y' ? */
 
@@ -60,7 +60,7 @@ class PigLatinWordConwerter {
     }
 
     private Punctuation getPunctuation(String word) {
-        for (char p : PUNTUATIONS.toCharArray()) {
+        for (char p : PUNCTUATIONS.toCharArray()) {
             int position = word.indexOf(p);
             if (position >= 0) {
                 return new Punctuation(position, p);
